@@ -1,0 +1,102 @@
+{
+  "mongoose model default": {
+    "prefix": "mongooseModelAreatomic",
+    "body": [
+      "const mongoose = require('mongoose')",
+      "const Schema = mongoose.Schema",
+      "\nconst ${1:name}Schema = new Schema(${{0:schema}})",
+      "\nmodule.exports = mongoose.model('${1:name}', ${1:name}Schema)"
+    ],
+    "description": "Mongoose default Model"
+  },
+  "validation Areatomic": {
+    "prefix": "validationAreatomic",
+    "body": [
+      "const utils = require('./utils')",
+      "const { captureError } = require('../exit')",
+      "\nconst ${1:name}Validation = (${2:params}) => {\n\t$0\n}",
+      "\nmodule.exports = { ${1:name}Validation }"
+    ],
+    "description": "Import of utils for validation"
+  },
+  "model services deault Areatomic": {
+    "prefix": "modelServicesDefaultAreatomic",
+    "body": [
+      "const { ${1:name}Model } = require('../../models')",
+      "const { captureError } = require('../exit')",
+      "\nexports.create = async (${2:params}) => {\n\ttry {\n\t\tconst ${1:name} = await ${1:name}Model.create({${2:params}})\n\t\treturn {1:name}\n\t}\n\tcatch (error) {\n\t\tthrow captureError('Erreur de base de données', 400, error.toString())\n\t}\n}",
+      "\nexports.get = async (${3:id}) => {\n\ttry {\n\t\treturn await ${1:name}Model.findOne({_id: ${3:id}})\n\t}\n\tcatch (error) {\n\t\tthrow captureError('Erreur de base de données', 400, error.toString())\n\t}\n}",
+      "\nexports.edit = async (${3:id}, ${2:params}) => {\n\ttry {\n\t\tconst ${1:name} = await ${1:name}Model.findOneAndUpdate({_id: ${3:id}},{$$set : {${2:params}}})\n\t\treturn this.get(${1:id})\n\t}\n\tcatch (error) {\n\t\tthrow captureError('Erreur de base de données', 400, error.toString())\n\t}\n}",
+      "\nexports.getAll = async () => {\n\ttry {\n\t\treturn await ${1:name}Model.find({})\n\t}\n\tcatch (error) {\n\t\tthrow captureError('Erreur de base de données', 400, error.toString())\n\t}\n}",
+      "\nexports.delete = async (${3:id}) => {\n\ttry {\n\t\tawait ${1:name}Model.deleteOne({ _id: aid })\n\t\treturn\n\t}\n\tcatch (error) {\n\t\tthrow captureError('Erreur de base de données', 400, error.toString())\n\t}\n}",
+      "\nexports.getByPage = async (page, limit) => {\n\ttry {\n\t\treturn await ${1:name}Model\n\t\t\t.find({})\n\t\t\t.skip(parseInt(page) * parseInt(limit))\n\t\t\t.limit(parseInt(limit) * parseInt(page) + parseInt(limit))\n\t}\n\tcatch (error) {\n\t\tthrow captureError('Erreur de base de données', 400, error.toString())\n\t}\n}"
+    ],
+    "description": "Create every services for a model : post, put, delete, get, getAll, getByPage"
+  },
+  "middleware default Areatomic": {
+    "prefix": "middlewareDefaultAreatomic",
+    "body": [
+      "const { ${1:name}Validation } = require('../../services/validation')",
+      "const data = async (req, res, next) => {\n\t${2:const}\n\n\ttry {\n\t\t$0\n\t}\n\tcatch (error) {\n\t\tnext(error)\n\t}\n}",
+      "\nmodule.exports = { data }"
+    ]
+  },
+  "controllers default Areatomic": {
+    "prefix": "controllersDefaultAreatomic",
+    "body": [
+      "const { ${1:name}Services } = require('../../services/data')",
+      "const { captureSuccess } = require('../../services/exit')",
+      "\nconst create = async (req, res, next) => {",
+      "\tconst { ${2:params} } = req.body",
+      "\n\ttry {",
+      "\t\tconst ${1:name} = await ${1:name}Services.create(${2:params})",
+      "\t\tnext(captureSuccess(200, '${4:Name} créé avec succès', { ${1:name}: ${1:name} }))",
+      "\t} catch (error) {\n\t\tnext(error)\n\t}\n}",
+      "\nconst get = async (req, res, next) => {",
+      "\tconst { ${3:id} } = req.params",
+      "\n\ttry {",
+      "\t\tconst ${1:name} = await ${1:name}Services.get(${3:id})",
+      "\t\tnext(captureSuccess(200, null, { ${1:name}: ${1:name} }))",
+      "\t} catch (error) {\n\t\tnext(error)\n\t}\n}",
+      "\nconst edit = async (req, res, next) => {",
+      "\tconst { ${3:id} } = req.params",
+      "\tconst { ${2:params} } = req.body",
+      "\n\ttry {",
+      "\t\tconst ${1:name} = await ${1:name}Services.edit(${3:id}, ${2:params})",
+      "\t\tnext(captureSuccess(200, '${4:Name} modifié avec succès', { ${1:name}: ${1:name} }))",
+      "\t} catch (error) {\n\t\tnext(error)\n\t}\n}",
+      "\nconst remove = async (req, res, next) => {",
+      "\tconst { ${3:id} } = req.params",
+      "\n\ttry {",
+      "\t\tconst ${1:name} = await ${1:name}Services.delete(${3:id})",
+      "\t\tnext(captureSuccess(200, '${4:Name} modifié avec succès', null))",
+      "\t} catch (error) {\n\t\tnext(error)\n\t}\n}",
+      "\nconst getAll = async (req, res, next) => {",
+      "\n\ttry {",
+      "\t\tconst ${1:name}s = await ${1:name}Services.getAll()",
+      "\t\tnext(captureSuccess(200, null, { ${1:name}s: ${1:name}s }))",
+      "\t} catch (error) {\n\t\tnext(error)\n\t}\n}",
+      "\nconst getByPage = async (req, res, next) => {",
+      "\tconst { page, limit } = req.params",
+      "\n\ttry {",
+      "\t\tconst ${1:name}s = await ${1:name}Services.getTable(page, limit)",
+      "\t\tnext(captureSuccess(200, null, { ${1:name}s: ${1:name}s }))",
+      "\t} catch (error) {\n\t\tnext(error)\n\t}\n}",
+    ],
+    "description": "Create every usual components with model services"
+  },
+  "routes default Areatomic": {
+    "prefix": "routesDefaultAreatomic",
+    "body": [
+        "const express = require('express')\nconst router = express.Router()",
+        "\nconst { authMiddlewares, ${1:name}Middlewares } = require('../middlewares')",
+        "\nconst { ${1:name}Controllers } = require('../controllers')",
+        "router.post('/', [authMiddlewares.tokenValidation, ${1:name}Middlewares.data], ${1:name}Controllers.create)",
+        "router.get('/:${2:id}', ${1:name}Controllers.get)",
+        "router.put('/:${2:id}', [authMiddlewares.tokenValidation, ${1:name}Middlewares.data], ${1:name}Controllers.edit)",
+        "router.delete('/:${2:id}', [authMiddlewares.tokenValidation], ${1:name}Controllers.delete)",
+        "router.get('/', ${1:name}Controllers.getAll)",
+        "router.get('/:page/:limit', ${1:name}Controllers.getByPage)",
+    ]
+  }
+}
