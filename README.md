@@ -1,31 +1,69 @@
 # express-snippet README
 
-This is the README for your extension "express-snippet". After writing up a brief description, we recommend including the following sections.
+Snippets config for express project build on the express-starter-kit of Areatomic
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+###### modelDefault
 
-For example if there is an image subfolder under your extension project workspace:
+Variables :
+1) name : model name
+2) schema : model schema
 
-\!\[feature X\]\(images/feature-x.png\)
+![modelDefaultSnippets](https://ik.imagekit.io/34fxnq3hl/Areatomic/modelDefaultSnippets.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675757693740)
+![modelDefault](https://ik.imagekit.io/34fxnq3hl/Areatomic/modelDefault.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675757693844)
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+###### servicesDefault
+
+Variables :
+1) name : model name
+2) params : model params
+3) id : called id
+
+![servicesDefaultSnippets](https://ik.imagekit.io/34fxnq3hl/Areatomic/serviceDefaultSnippets.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675757693781)
+![servicesDefault](https://ik.imagekit.io/34fxnq3hl/Areatomic/serviceDefault.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675757693758)
+
+###### validationDefault
+
+Variables :
+1) name : model name
+2) const : import from body for validation
+
+![validationDefaultSnippets](https://ik.imagekit.io/34fxnq3hl/Areatomic/validationDefaultSnippets.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675757695276)
+![validationDefault](https://ik.imagekit.io/34fxnq3hl/Areatomic/validationDefault.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675757695079)
+
+###### middlewareDefault
+
+Variables :
+1) name : model name
+2) params : model params
+
+![middlewareDefaultSnippets](https://ik.imagekit.io/34fxnq3hl/Areatomic/middlewareDefaultSnippets.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675757693739)
+![middlewareDefault](https://ik.imagekit.io/34fxnq3hl/Areatomic/middlewareDefault.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675757693680)
+
+###### controllersDefault
+
+Variables :
+1) name : model name
+2) params : import from body for params of functions
+3) id : import of id from req.params for params of functions
+4) messageName : model name with a Capital for messages
+
+![controllersDefaultSnippets](https://ik.imagekit.io/34fxnq3hl/Areatomic/controllersDefaultSnippets.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675757693758)
+![controllersDefault](https://ik.imagekit.io/34fxnq3hl/Areatomic/controllersDefault.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675757693746)
+
+###### routesDefault
+
+Variables :
+1) name : model name
+2) id : id for req.params
+
+![routesDefaultSnippets](https://ik.imagekit.io/34fxnq3hl/Areatomic/routesDefaultSnippets.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675757693782)
+![routesDefault](https://ik.imagekit.io/34fxnq3hl/Areatomic/routesDefault.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675757693785)
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+For efficient use of this extension you must use the template express-starter-kit from Areatomic.
 
 ## Known Issues
 
@@ -33,33 +71,22 @@ Calling out known issues can help limit users opening duplicate issues against y
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
 
-Initial release of ...
+Initial release with default snippets :
 
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+* modelDefault: generate default model snippets
+* servicesDefault: generate default services snippets
+* validationDefault: generate default validation snippets
+* middlewareDefault: generate default middleware snippets
+* controllersDefault: generate default controllers snippets
+* routesDefault: genereate default routes snippetes
 
 ---
 
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
 ## For more information
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+* [Areatomic's GitHub](https://github.com/AreAtomic)
+* [Areatomic's Marketplace](https://areatomic.netlify.app)
 
 **Enjoy!**

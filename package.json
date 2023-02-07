@@ -1,8 +1,9 @@
 {
-  "name": "express-snippet",
+  "name": "express-snippet-areatomic",
   "displayName": "express-snippet",
-  "description": "Code snippet for usual express routers, services and middlewares",
-  "version": "0.0.1",
+  "icon": "icon.png",
+  "description": "Code snippet for usual express routers, services and middlewares with express template of Areatomic",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.75.0"
   },
@@ -16,5 +17,10 @@
         "path": "./snippets/snippets.code-snippets"
       }
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AreAtomic/express-snippets.git"
+  },
+  "publisher": "Areatomic"
 }

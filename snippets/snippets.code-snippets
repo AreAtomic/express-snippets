@@ -1,16 +1,16 @@
 {
-  "mongoose model default": {
-    "prefix": "mongooseModelAreatomic",
+  "model default": {
+    "prefix": "modelDefault",
     "body": [
       "const mongoose = require('mongoose')",
       "const Schema = mongoose.Schema",
-      "\nconst ${1:name}Schema = new Schema(${{0:schema}})",
+      "\nconst ${1:name}Schema = new Schema(${0:schema})",
       "\nmodule.exports = mongoose.model('${1:name}', ${1:name}Schema)"
     ],
     "description": "Mongoose default Model"
   },
-  "validation Areatomic": {
-    "prefix": "validationAreatomic",
+  "validation default": {
+    "prefix": "validationDefault",
     "body": [
       "const utils = require('./utils')",
       "const { captureError } = require('../exit')",
@@ -19,8 +19,8 @@
     ],
     "description": "Import of utils for validation"
   },
-  "model services deault Areatomic": {
-    "prefix": "modelServicesDefaultAreatomic",
+  "services default": {
+    "prefix": "servicesDefault",
     "body": [
       "const { ${1:name}Model } = require('../../models')",
       "const { captureError } = require('../exit')",
@@ -33,16 +33,16 @@
     ],
     "description": "Create every services for a model : post, put, delete, get, getAll, getByPage"
   },
-  "middleware default Areatomic": {
-    "prefix": "middlewareDefaultAreatomic",
+  "middleware default": {
+    "prefix": "middlewareDefault",
     "body": [
       "const { ${1:name}Validation } = require('../../services/validation')",
       "const data = async (req, res, next) => {\n\t${2:const}\n\n\ttry {\n\t\t$0\n\t}\n\tcatch (error) {\n\t\tnext(error)\n\t}\n}",
       "\nmodule.exports = { data }"
     ]
   },
-  "controllers default Areatomic": {
-    "prefix": "controllersDefaultAreatomic",
+  "controllers default": {
+    "prefix": "controllersDefault",
     "body": [
       "const { ${1:name}Services } = require('../../services/data')",
       "const { captureSuccess } = require('../../services/exit')",
@@ -85,8 +85,8 @@
     ],
     "description": "Create every usual components with model services"
   },
-  "routes default Areatomic": {
-    "prefix": "routesDefaultAreatomic",
+  "routes default": {
+    "prefix": "routesDefault",
     "body": [
         "const express = require('express')\nconst router = express.Router()",
         "\nconst { authMiddlewares, ${1:name}Middlewares } = require('../middlewares')",
