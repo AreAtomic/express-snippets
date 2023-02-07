@@ -13,17 +13,18 @@ Variables :
 ![modelDefaultSnippets](https://ik.imagekit.io/34fxnq3hl/Areatomic/modelDefaultSnippets.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675757693740)
 ![modelDefault](https://ik.imagekit.io/34fxnq3hl/Areatomic/modelDefault.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675757693844)
 
-###### servicesDefault
+###### dataServicesDefault
 
 Variables :
 1) name : model name
 2) params : model params
 3) id : called id
 
-![servicesDefaultSnippets](https://ik.imagekit.io/34fxnq3hl/Areatomic/serviceDefaultSnippets.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675757693781)
-![servicesDefault](https://ik.imagekit.io/34fxnq3hl/Areatomic/serviceDefault.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675757693758)
+![dataServicesDefault](https://ik.imagekit.io/34fxnq3hl/Areatomic/serviceDefaultSnippets.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675757693781)
+![dataServicesDefault](https://ik.imagekit.io/34fxnq3hl/Areatomic/serviceDefault.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675757693758)
 
-###### validationDefault
+###### validationDefault (without import)
+###### validationDefaultImport
 
 Variables :
 1) name : model name
@@ -83,6 +84,10 @@ Initial release with default snippets :
 * routesDefault: genereate default routes snippetes
 
 ---
+
+## Install the extension without VSCode Marketplace
+
+* To start using your extension with Visual Studio Code, copy `snippets/snippets.code-snippets` into the `<user home>/.vscode/extensions` folder and restart Code.
 
 ## For more information
 
